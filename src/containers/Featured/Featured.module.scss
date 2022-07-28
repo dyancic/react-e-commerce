@@ -1,8 +1,9 @@
 .Carousel {
     max-width: 60vw;
     margin: 20px;
-}
-
-img {
-    width: 60vw;
+    &_Img {
+        width: 60vw;
+        height: 500px;
+        object-fit: cover;
+    }
 }
