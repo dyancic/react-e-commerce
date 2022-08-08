@@ -2,5 +2,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    padding: 0 6vw;
+}
+.Search {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 30px;
+    &_Input {
+    }
+    &_Sort {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 1200px) {
 }

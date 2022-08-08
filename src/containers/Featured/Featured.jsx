@@ -9,9 +9,9 @@ const Featured = ({ blogs }) => {
             nextLabel={null}
             prevLabel={null}
             fade>
-            {blogs.map((blog) => {
+            {blogs.map((blog, i) => {
                 return (
-                    <Carousel.Item interval={5000}>
+                    <Carousel.Item interval={5000} key={i}>
                         <a href={blog.blog}>
                             <img
                                 className={style.Carousel_Img}
@@ -20,7 +20,9 @@ const Featured = ({ blogs }) => {
                             />
                         </a>
                         <Carousel.Caption>
-                            <h3>{blog.title}</h3>
+                            <h3 className={style.Carousel_Title}>
+                                {blog.title}
+                            </h3>
                             <p></p>
                         </Carousel.Caption>
                     </Carousel.Item>

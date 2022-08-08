@@ -1,0 +1,53 @@
+.Cart {
+    min-height: calc(100vh - 240px);
+    text-align: center;
+    padding: 12px;
+
+    &_Container {
+        width: 70vw;
+        max-width: 1000px;
+        height: fit-content;
+        border: 5px solid #324759;
+        background-color: #f3e0be;
+        color: black;
+    }
+    &_Item {
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2rem;
+        border: 1px solid #324759;
+    }
+    &_Left {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+    }
+    &_Right {
+        display: flex;
+        align-items: center;
+        margin: 12px;
+        gap: 6px;
+    }
+    &_Name {
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &_Img {
+        transform: rotate(90deg);
+        height: 120px;
+        margin: 0 60px;
+    }
+    &_Button {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .Cart_Container {
+        width: 90vw;
+    }
+}

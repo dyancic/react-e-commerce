@@ -1,0 +1,42 @@
+.Product {
+    min-height: calc(100vh - 60px);
+    width: 60vw;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_Img {
+        padding: 30px;
+        height: 95vh;
+    }
+    &_Info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 30px;
+        min-width: 400px;
+        width: 50vw;
+        border: 5px solid #324759;
+        background-color: #f3e0be;
+        border-radius: 10px;
+    }
+    &_Buy {
+        display: flex;
+        align-self: flex-end;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .Product {
+        flex-wrap: wrap;
+
+        &_Img {
+            height: 85vh;
+        }
+        &_Info {
+            min-width: 90vw;
+        }
+    }
+}

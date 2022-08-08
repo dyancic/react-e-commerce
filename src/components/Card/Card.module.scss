@@ -1,9 +1,22 @@
 .Card {
-    width: 200px;
-    border: 5px solid black;
+    width: 300px;
+    height: 500px;
+    border: 5px solid #324759;
+    background-color: #f3e0be;
+    color: black;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 15px;
+    cursor: pointer;
     &_Img {
-        height: 200px;
-        width: auto;
+        height: 330px;
+        width: min-content;
+    }
+    &_Price {
+        font-size: 1.5rem;
     }
 }
