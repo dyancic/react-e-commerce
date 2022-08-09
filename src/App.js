@@ -32,7 +32,9 @@ function App() {
                         />
                         <Route
                             path="/cart"
-                            element={<Cart wineList={wineList} />}
+                            element={
+                                <Cart wineList={wineList} getData={getData} />
+                            }
                         />
                         <Route
                             path="/database"
