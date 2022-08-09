@@ -1,3 +1,7 @@
+.Heading {
+    color: #f3e0be;
+}
+
 .Container {
     display: flex;
     flex-wrap: wrap;
@@ -5,6 +9,7 @@
     gap: 20px;
     padding: 0 6vw;
 }
+
 .Search {
     display: flex;
     width: 100%;

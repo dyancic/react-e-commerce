@@ -7,9 +7,11 @@
 }
 
 .Select {
-    width: 600px;
+    max-width: 600px;
+    width: 85vw;
     display: flex;
     justify-content: space-between;
+
     &_Options {
         max-width: 600px;
         border-radius: 6px;
@@ -20,5 +22,6 @@
 }
 
 .Form {
-    width: 600px;
+    max-width: 600px;
+    width: 85vw;
 }

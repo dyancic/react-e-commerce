@@ -3,25 +3,32 @@ import style from "./Home.module.scss";
 import Featured from "../../containers/Featured";
 import Shop from "../../containers/Shop/Shop";
 import { useEffect, useState, useContext } from "react";
-import { getFromDatabase } from "../../services/server";
+import { getFromDatabase, updateItem } from "../../services/server";
 import { CartContext } from "../../context/CartContext";
 
 const Home = ({ wineList }) => {
     const { cartContent, setCartContent } = useContext(CartContext);
     const [blogs, setBlogs] = useState([]);
+
     const getData = async () => {
         const data = await getFromDatabase("blogs");
         setBlogs(data);
     };
 
+    const getCartData = async () => {
+        const data = await getFromDatabase("cart");
+        setCartContent(data[0]);
+    };
+
     useEffect(() => {
         getData();
-        if (Object.keys(cartContent).length === 0) {
+        getCartData();
+        if (Object.keys(cartContent).length < wineList.length) {
             const cartObj = wineList.reduce((acc, wine) => {
-                acc[wine.name] = 0;
+                acc[wine.id] = 0;
                 return acc;
             }, {});
-            setCartContent(cartObj);
+            updateItem("cart", "thisIsCartId", cartObj);
         }
     }, []);
 

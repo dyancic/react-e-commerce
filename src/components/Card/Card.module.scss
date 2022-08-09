@@ -20,3 +20,27 @@
         font-size: 1.5rem;
     }
 }
+
+.Heart {
+    position: relative;
+
+    left: 250px;
+    bottom: 475px;
+    font-size: 1.7rem;
+    color: #324759;
+    &_Fill {
+        position: relative;
+        font-size: 1.7rem;
+        color: #324759;
+        left: 222.5px;
+        bottom: 475px;
+        opacity: 0;
+        transition: ease-out;
+        transition-duration: 0.2s;
+        &__active {
+            opacity: 1;
+            transition: ease-in;
+            transition-duration: 0.2s;
+        }
+    }
+}

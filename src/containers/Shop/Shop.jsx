@@ -14,11 +14,12 @@ const Shop = ({ wineList }) => {
     const handleSearch = (e) => {
         setSearch(e.target.value.toLowerCase());
     };
+
     console.log(search);
 
     return (
         <>
-            <h1>Shop our range</h1>
+            <h1 className={style.Heading}>Shop our range</h1>
             <div className={style.Search}>
                 <input
                     type="text"

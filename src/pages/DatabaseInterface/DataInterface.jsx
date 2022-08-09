@@ -8,7 +8,7 @@ import {
     objTemplate,
 } from "../../services/winelist";
 import { updateItem, createItem, deleteItem } from "../../services/server";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const DataInterface = ({ getData, wineList }) => {
     const [inputs, setInputs] = useState(objTemplate);
@@ -21,7 +21,7 @@ const DataInterface = ({ getData, wineList }) => {
             year: parseInt(inputs.year),
             stock: parseInt(inputs.stock),
         };
-        if (selected !== "Add new wine") updateItem(inputs.id, data);
+        if (selected !== "Add new wine") updateItem("wine", inputs.id, data);
         else {
             createItem(data);
             setInputs(objTemplate);
@@ -62,7 +62,10 @@ const DataInterface = ({ getData, wineList }) => {
                         return <option key={wine.id}>{wine.name}</option>;
                     })}
                 </select>
-                <Button onClick={handleDelete} className={style.Select_Delete}>
+                <Button
+                    variant="danger"
+                    onClick={handleDelete}
+                    className={style.Select_Delete}>
                     Delete
                 </Button>
             </div>

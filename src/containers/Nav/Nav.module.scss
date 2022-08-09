@@ -5,10 +5,8 @@
     position: sticky;
     top: 0;
     z-index: 2;
-
     height: 60px;
     background-color: #324759;
-
     color: #fefefe;
     font-size: 1em;
 
@@ -31,5 +29,15 @@
         height: 100%;
         display: flex;
         align-items: center;
+    }
+    &_Cart {
+        font-size: 1.5em;
+    }
+    &_Badge {
+        position: relative;
+        right: 7px;
+        bottom: 7px;
+        transform: scale(70%);
+        background-color: red;
     }
 }

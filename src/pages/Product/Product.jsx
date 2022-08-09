@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getFromDatabase } from "../../services/server";
+import { getFromDatabase, updateItem } from "../../services/server";
 import style from "./Product.module.scss";
 import { CartContext } from "../../context/CartContext";
 
@@ -21,9 +21,10 @@ const Product = () => {
     }, []);
 
     const handleClick = () => {
-        const newCart = cartContent;
-        newCart[product.name] = cartContent[product.name] + 1;
-        setCartContent(newCart);
+        const updatedCart = { ...cartContent };
+        updatedCart[product.id] = updatedCart[product.id] + 1;
+        updateItem("cart", "thisIsCartId", updatedCart);
+        setCartContent(updatedCart);
     };
 
     return (
