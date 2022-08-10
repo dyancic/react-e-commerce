@@ -2,9 +2,11 @@
 @import "~bootstrap/scss/_forms.scss";
 @import "~bootstrap/scss/_buttons.scss";
 @import "~bootstrap/scss/_badge.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Inconsolata", monospace;
 }

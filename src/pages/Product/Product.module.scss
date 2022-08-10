@@ -1,21 +1,26 @@
 .Product {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 240px);
     width: 60vw;
     font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
+
     &_Img {
         padding: 30px;
-        height: 95vh;
+        height: 80vh;
+        margin-right: 12px;
     }
     &_Info {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 6px;
         height: 100%;
         padding: 30px;
         min-width: 400px;
+        max-width: 780px;
         width: 50vw;
         border: 5px solid #324759;
         background-color: #f3e0be;
@@ -24,7 +29,13 @@
     &_Buy {
         display: flex;
         align-self: flex-end;
-        font-size: 1.5rem;
+        gap: 6px;
+        font-size: 2rem;
+    }
+    &_Desc {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
     }
 }
 
@@ -33,7 +44,7 @@
         flex-wrap: wrap;
 
         &_Img {
-            height: 85vh;
+            height: 60vh;
         }
         &_Info {
             min-width: 90vw;

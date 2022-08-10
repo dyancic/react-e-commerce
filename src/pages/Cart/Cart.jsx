@@ -61,6 +61,21 @@ const Cart = ({ wineList, getData }) => {
         setCount(resetCart);
     };
 
+    const handleClearCart = () => {
+        const clearedCart = Object.fromEntries(
+            Object.entries(cartContent).map((c) => {
+                c[1] = 0;
+                return c;
+            }),
+        );
+        console.log(clearedCart);
+
+        setCartContent(() => ({
+            ...clearedCart,
+        }));
+        updateItem("cart", "thisIsCartId", clearedCart);
+    };
+
     return (
         <div className={style.Cart}>
             <h1 style={{ marginBottom: "16px" }}>Cart</h1>
@@ -103,9 +118,16 @@ const Cart = ({ wineList, getData }) => {
             {Object.values(cartContent).every((c) => c === 0) ? (
                 <h3>{message}</h3>
             ) : (
-                <button className={style.Checkout} onClick={handleCheckout}>
-                    Checkout
-                </button>
+                <div className={style.Cart_Btns}>
+                    <button
+                        onClick={handleClearCart}
+                        className={style.Checkout}>
+                        Clear Cart
+                    </button>
+                    <button className={style.Checkout} onClick={handleCheckout}>
+                        Checkout
+                    </button>
+                </div>
             )}
         </div>
     );

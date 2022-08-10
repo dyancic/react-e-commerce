@@ -4,11 +4,12 @@
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 3;
     height: 60px;
     background-color: #324759;
     color: #fefefe;
-    font-size: 1em;
+    font-size: 1.2em;
+    font-weight: 500;
 
     &_Title {
         padding: 0 24px;
@@ -31,7 +32,7 @@
         align-items: center;
     }
     &_Cart {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
     &_Badge {
         position: relative;

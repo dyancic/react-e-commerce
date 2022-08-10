@@ -29,8 +29,10 @@ const Shop = ({ wineList }) => {
                     className={style.Search_Input}
                 />
                 <div className={style.Search_Sort}>
-                    Sort by:
-                    <select onChange={handleSelect}>
+                    Sort:
+                    <select
+                        onChange={handleSelect}
+                        className={style.Search_Sort__Select}>
                         <option>Name</option>
                         <option>Price</option>
                         <option>Year</option>

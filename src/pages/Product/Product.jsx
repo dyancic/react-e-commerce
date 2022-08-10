@@ -22,9 +22,11 @@ const Product = () => {
 
     const handleClick = () => {
         const updatedCart = { ...cartContent };
-        updatedCart[product.id] = updatedCart[product.id] + 1;
-        updateItem("cart", "thisIsCartId", updatedCart);
-        setCartContent(updatedCart);
+        if (cartContent[product.id] < product.stock) {
+            updatedCart[product.id] = updatedCart[product.id] + 1;
+            updateItem("cart", "thisIsCartId", updatedCart);
+            setCartContent(updatedCart);
+        }
     };
 
     return (

@@ -19,11 +19,19 @@
     &_Price {
         font-size: 1.5rem;
     }
+    &_Info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+.Card:hover {
+    background-color: #fcedd5;
 }
 
 .Heart {
     position: relative;
-
     left: 250px;
     bottom: 475px;
     font-size: 1.7rem;
@@ -37,6 +45,7 @@
         opacity: 0;
         transition: ease-out;
         transition-duration: 0.2s;
+        cursor: pointer;
         &__active {
             opacity: 1;
             transition: ease-in;

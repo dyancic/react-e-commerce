@@ -1,5 +1,7 @@
 .Heading {
-    color: #f3e0be;
+    color: #091118;
+    font-size: 2.3em;
+    margin-top: 24px;
 }
 
 .Container {
@@ -15,12 +17,45 @@
     width: 100%;
     justify-content: space-around;
     padding: 30px;
+    font-size: 1.5em;
     &_Input {
+        width: 30vw;
+        max-width: 400px;
+        font-size: 16px;
+        padding: 5px 45px 5px 5px;
+        background-color: #fefefe;
+        border-radius: 6px;
+        border: 2px solid #324759;
+        transition: all 0.4s;
+    }
+    &_Input:focus {
+        border: none;
+        outline: none;
+        box-shadow: 0 1px 12px #b8c6db;
+        -moz-box-shadow: 0 1px 12px #b8c6db;
+        -webkit-box-shadow: 0 1px 12px #b8c6db;
     }
     &_Sort {
+        color: #091118;
         display: flex;
         gap: 12px;
         align-items: center;
+
+        &__Select {
+            font-size: 16px;
+            padding: 5px 45px 5px 5px;
+            background-color: #fefefe;
+            border-radius: 6px;
+            border: 2px solid #324759;
+            transition: all 0.4s;
+        }
+        &__Select:focus {
+            border: none;
+            outline: none;
+            box-shadow: 0 1px 12px #b8c6db;
+            -moz-box-shadow: 0 1px 12px #b8c6db;
+            -webkit-box-shadow: 0 1px 12px #b8c6db;
+        }
     }
 }
 

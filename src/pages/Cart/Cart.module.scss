@@ -2,15 +2,16 @@
     min-height: calc(100vh - 240px);
     text-align: center;
     padding: 15px;
-    color: #f3e0be;
+    color: #152535;
 
     &_Container {
         width: 70vw;
         max-width: 1000px;
         height: fit-content;
-        border: 5px solid #324759;
+        border: 3px solid #324759;
         background-color: #f3e0be;
         color: black;
+        margin: 2px;
     }
     &_Item {
         height: 80px;
@@ -48,6 +49,15 @@
     &_Count {
         width: 23px;
     }
+    &_Btns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+    }
+}
+
+.Checkout {
+    font-size: 1.2em;
 }
 
 @media only screen and (max-width: 850px) {
