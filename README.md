@@ -2,8 +2,7 @@
 
 ![alt text](./src/assets/img/screenshot.PNG)
 
-` `  
-` `
+</br>
 
 # Task breakdown
 
@@ -30,8 +29,7 @@
 -   Ability to change quantity of products in cart
 -   Ability to remove items from cart
 
-` `  
-` `
+</br>
 
 # Setup
 
@@ -48,8 +46,7 @@
 
 -   npm start
 
-` `  
-` `
+</br>
 
 # Additional features
 
