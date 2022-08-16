@@ -23,7 +23,7 @@ const DataInterface = ({ getData, wineList }) => {
         };
         if (selected !== "Add new wine") updateItem("wine", inputs.id, data);
         else {
-            createItem(data);
+            createItem("wine", data);
             setInputs(objTemplate);
         }
 
@@ -46,7 +46,7 @@ const DataInterface = ({ getData, wineList }) => {
     };
 
     const handleDelete = () => {
-        deleteItem(inputs.id);
+        deleteItem("wine", inputs.id);
         getData();
         setInputs(objTemplate);
     };

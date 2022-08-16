@@ -5,13 +5,11 @@ import { updateItem, getFromDatabase } from "../../services/server";
 
 const Cart = ({ wineList, getData }) => {
     const { cartContent, setCartContent } = useContext(CartContext);
-    const [count, setCount] = useState(cartContent);
     const [message, setMessage] = useState("You have no items in your cart");
 
     const getCartData = async () => {
         const data = await getFromDatabase("cart");
         setCartContent(data[0]);
-        setCount(data[0]);
     };
 
     useEffect(() => {
@@ -22,20 +20,19 @@ const Cart = ({ wineList, getData }) => {
         const newCart = cartContent;
         const eventWine = wineList.find((w) => w.id === e.target.value);
 
-        if (e.target.innerText === "+" && eventWine.stock > count[eventWine.id])
+        if (
+            e.target.innerText === "+" &&
+            eventWine.stock > cartContent[eventWine.id]
+        )
             ++newCart[eventWine.id];
 
-        if (e.target.innerText === "-" && count[eventWine.id] > 0)
+        if (e.target.innerText === "-" && cartContent[eventWine.id] > 0)
             --newCart[eventWine.id];
 
-        console.log(cartContent);
-        setCount((count) => ({
-            ...count,
-            ...newCart,
-        }));
         updateItem("cart", "thisIsCartId", newCart);
-        setCartContent((count) => ({
-            ...count,
+
+        setCartContent((cartContent) => ({
+            ...cartContent,
             ...newCart,
         }));
     };
@@ -58,7 +55,6 @@ const Cart = ({ wineList, getData }) => {
         setMessage("Your order has been purchased");
         updateItem("cart", "thisIsCartId", resetCart);
         setCartContent(resetCart);
-        setCount(resetCart);
     };
 
     const handleClearCart = () => {
@@ -82,8 +78,8 @@ const Cart = ({ wineList, getData }) => {
             {wineList.map((wine) => {
                 if (cartContent[wine.id] > 0) {
                     return (
-                        <div className={style.Cart_Container}>
-                            <div key={wine.id} className={style.Cart_Item}>
+                        <div key={wine.id} className={style.Cart_Container}>
+                            <div className={style.Cart_Item}>
                                 <div className={style.Cart_Left}>
                                     <img
                                         src={wine.img}
@@ -101,7 +97,7 @@ const Cart = ({ wineList, getData }) => {
                                         -
                                     </button>
                                     <p className={style.Cart_Count}>
-                                        {count[wine.id]}
+                                        {cartContent[wine.id]}
                                     </p>
                                     <button
                                         className={style.Cart_Button}
